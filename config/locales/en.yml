@@ -25,6 +25,7 @@ en:
   common:
     confirmation: Are you sure?
     and_more: "%{text} and more..."
+    delete: Delete
 
   users:
     destroy:
