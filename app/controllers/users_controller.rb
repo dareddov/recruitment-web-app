@@ -1,3 +1,9 @@
 class UsersController < ApplicationController
-  expose :users, -> { User.all }
+  expose :user
+  expose_decorated(:users, -> { User.all })
+
+  def destroy
+    user.destroy
+    redirect_to :users, notice: t('.success', email: user.email)
+  end
 end

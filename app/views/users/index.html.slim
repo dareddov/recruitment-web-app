@@ -1,10 +1,12 @@
 .container
-  h2 Users
+  h2= t('.title')
   table.table
     thead
       tr
-        th E-mail
+        th= ta(User, :email)
+        th
     tbody
       - users.each do |user|
         tr
           td= user.email
+          = user.destroy_icon

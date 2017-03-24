@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
     title RecruitmentWebApp
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -15,4 +15,7 @@ html
           ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               li = link_to 'Logout', destroy_user_session_path, method: :delete
+    .container
+      .md8
+        = flash_messages
     = yield
