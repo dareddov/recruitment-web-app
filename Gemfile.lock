@@ -186,7 +186,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.3.7)
   byebug
-  cancan
+  cancan (~> 1.6.10)
   coffee-rails (~> 4.2)
   decent_exposure (~> 3.0.2)
   devise (~> 4.2.1)
