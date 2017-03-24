@@ -23,21 +23,24 @@ en:
   hello: "Hello world"
 
   common:
-    confirmation: Are you sure?
+    access_denied: Access denied.
+    admin_panel: Admin panel
     and_more: "%{text} and more..."
+    confirmation: Are you sure?
     delete: Delete
+    logout: Logout
 
   users:
-    destroy:
-      success: User %{email} was successfully destroyed.
     index:
       title: Users
+    destroy:
+      success: User %{email} was successfully destroyed.
 
   activerecord:
     models:
       user:
         attributes:
-          email: E-mail
-          gender: Gender
           age: Age
+          gender: Gender
+          email: E-mail
           interests: Interests
