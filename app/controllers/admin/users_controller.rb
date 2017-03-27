@@ -1,21 +1,32 @@
 class Admin::UsersController < Admin::BaseController
-  expose :user
-  expose :interests, from: :user
-  expose_decorated(:users, -> { User.all })
+  def index
+    @users = User.all.decorate
+  end
+
+  def new
+    @user = User.new
+  end
 
   def create
-    user.password = 'secret'
+    @user = User.new(user_params)
+    @user.password = 'secret'
 
-    if user.save
-      redirect_to [:admin, :users], notice: t('.success', email: user.email)
+    if @user.save
+      redirect_to [:admin, :users], notice: t('.success', email: @user.email)
     else
       render 'new'
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   def update
-    if user.update_attributes(user_params)
-      redirect_to [:admin, :users], notice: t('.success', email: user.email)
+    @user = User.find(params[:id])
+
+    if @user.update_attributes(user_params)
+      redirect_to [:admin, :users], notice: t('.success', email: @user.email)
     else
       render 'edit'
     end

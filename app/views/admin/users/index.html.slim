@@ -4,13 +4,13 @@
   table.table
     thead
       tr
-        th= ta(User, :email)
-        th= ta(User, :gender)
-        th= ta(User, :age)
-        th= ta(User, :interests)
+        th= translate_attribute(User, :email)
+        th= translate_attribute(User, :gender)
+        th= translate_attribute(User, :age)
+        th= translate_attribute(User, :interests)
         th= t('common.edit')
     tbody
-      - users.each do |user|
+      - @users.each do |user|
         tr
           td= user.email
           td= user.gender
