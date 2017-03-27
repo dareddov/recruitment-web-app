@@ -4,9 +4,15 @@
     thead
       tr
         th= ta(User, :email)
+        th= ta(User, :gender)
+        th= ta(User, :age)
+        th= ta(User, :interests)
         th
     tbody
       - users.each do |user|
         tr
           td= user.email
+          td= user.gender
+          td= user.age
+          td= user.pretty_interests
           = user.destroy_icon

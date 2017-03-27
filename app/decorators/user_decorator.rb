@@ -11,4 +11,9 @@ class UserDecorator < Draper::Decorator
       end.html_safe
     end
   end
+
+  def pretty_interests(scope = 8)
+    interests = object.interests.pluck(:name)
+    interests.count <= scope ? interests.join(', ') : t('common.and_more', text: interests.first(scope).join(', '))
+  end
 end

@@ -24,6 +24,7 @@ en:
 
   common:
     confirmation: Are you sure?
+    and_more: "%{text} and more..."
 
   users:
     destroy:
@@ -36,3 +37,6 @@ en:
       user:
         attributes:
           email: E-mail
+          gender: Gender
+          age: Age
+          interests: Interests
