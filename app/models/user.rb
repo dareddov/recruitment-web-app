@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  enum role: [:admin, :user]
+  enum role: { user: 0, admin: 1 }
 
   self.roles.keys.each do |role|
     define_method "is_#{role}?" do
