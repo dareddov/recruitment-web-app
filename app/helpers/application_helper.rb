@@ -16,7 +16,7 @@ module ApplicationHelper
     nil
   end
 
-  def ta(model, attribute)
+  def translate_attribute(model, attribute)
     t("activerecord.models.#{model.name.downcase}.attributes.#{attribute.to_s}")
   end
 end
