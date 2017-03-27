@@ -8,6 +8,7 @@
         th= translate_attribute(User, :age)
         th= translate_attribute(User, :interests)
         th= t('common.delete') if can?(:destroy, User)
+
     tbody
       - @users.each do |user|
         tr
