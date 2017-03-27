@@ -1,0 +1,25 @@
+= simple_nested_form_for [:admin, user] do |f|
+  .row
+    .col-md-4
+      = f.input :email
+    .col-md-4
+      = f.input :age
+    .col-md-4
+      = f.input :gender, collection: User.genders.keys, include_blank: false
+
+  h2= t('.interests')
+
+  .row#interests
+    = f.simple_fields_for :interests do |i_f|
+      = i_f.hidden_field :id
+      .col-md-6
+        = i_f.input :name
+      .col-md-5
+        = i_f.input :interest_type, collection: Interest.interest_types.keys, include_blank: false
+      .col-md-1
+        = i_f.input :_destroy, as: :boolean
+  .row
+    = f.link_to_add t('.add_interest'), :interests, data: { target: '#interests' }
+
+  .row
+    = f.button :submit, t('common.submit')
