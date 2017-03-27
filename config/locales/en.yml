@@ -29,6 +29,7 @@ en:
     confirmation: Are you sure?
     delete: Delete
     logout: Logout
+    and_more: "%{text} and more..."
 
   users:
     index:
