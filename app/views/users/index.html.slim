@@ -1,5 +1,7 @@
 .container
   h2= t('.title')
+  - if can?(:export, User)
+    = link_to t('.export'), [:export, :users, format: 'csv']
   table.table
     thead
       tr
