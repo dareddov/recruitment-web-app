@@ -1,6 +1,7 @@
 .container
   .row
     h2= t('.title')
+    h4= t('.amount_points', points: Interest.specific_scope.count)
   table.table
     thead
       tr
