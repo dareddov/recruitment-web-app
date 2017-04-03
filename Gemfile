@@ -43,6 +43,8 @@ gem 'font-awesome-rails', '~> 4.7.0.1'
 gem 'draper', '3.0.0.pre1'
 gem 'simple_form', '~> 3.4.0'
 gem 'nested_form', '~> 0.3.2'
+gem 'ransack'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

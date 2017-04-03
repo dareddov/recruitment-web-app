@@ -2,6 +2,12 @@
   h2= t('.title')
   - if can?(:export, User)
     = link_to t('.export'), [:export, :users, format: 'csv']
+  .row
+    = search_form_for @q, builder: SimpleForm::FormBuilder do |f|
+      .col-md-4
+        = f.input :email_cont, as: :string, label: translate_attribute(User, :email)
+        = f.button :submit, t('common.submit')
+
   table.table
     thead
       tr
