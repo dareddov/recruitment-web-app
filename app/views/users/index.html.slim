@@ -9,6 +9,7 @@
         th= translate_attribute(User, :gender)
         th= translate_attribute(User, :age)
         th= translate_attribute(User, :interests)
+        th=
         th= t('common.delete') if can?(:destroy, User)
 
     tbody
@@ -18,4 +19,6 @@
           td= user.gender
           td= user.age
           td= user.pretty_interests
+          td= link_to [:send_regards, user] do
+            = fa_icon('envelope')
           td= user.destroy_icon

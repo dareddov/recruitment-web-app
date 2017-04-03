@@ -5,6 +5,14 @@ class UsersController < ApplicationController
     @users = User.all.decorate
   end
 
+  def send_regards
+    service = RegardsSender.call(params, current_user)
+
+    if service
+      redirect_to :users, notice: t('.success')
+    end
+  end
+
   def export
     @users = User.all.decorate
 

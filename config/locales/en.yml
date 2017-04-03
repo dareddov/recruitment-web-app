@@ -40,6 +40,8 @@ en:
       export: Export users
     destroy:
       success: User %{email} was successfully destroyed.
+    send_regards:
+      success: Email to user was sucessfully sent.
 
   admin:
     users:
@@ -68,3 +70,8 @@ en:
           gender: Gender
           email: E-mail
           interests: Interests
+
+  regards_mailer:
+    send_regards_email:
+      subject: Regards
+      regards: "%{email} sends his regards."
