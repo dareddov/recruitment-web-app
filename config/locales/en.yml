@@ -37,7 +37,7 @@ en:
   users:
     index:
       title: Users
-      export: Export users
+      export: Export to CSV
     destroy:
       success: User %{email} was successfully destroyed.
 
