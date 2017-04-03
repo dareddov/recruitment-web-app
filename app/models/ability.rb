@@ -7,6 +7,8 @@ class Ability
       if user.is_admin?
         can :manage, User
         cannot :destroy, User, id: user.id
+      else
+        can :send_regards, User
       end
   end
 end
