@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create([
-              { email: 'admin@example.com', password: 'Secret99' },
+              { email: 'admin@example.com', password: 'Secret99', role: :admin },
               { email: 'user1@example.com', password: 'Secret99' },
               { email: 'user2@example.com', password: 'Secret99' }
             ])

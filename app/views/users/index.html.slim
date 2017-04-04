@@ -1,10 +1,18 @@
 .container
-  h2 Users
+  h2= t('.title')
   table.table
     thead
       tr
-        th E-mail
+        th= translate_attribute(User, :email)
+        th= translate_attribute(User, :gender)
+        th= translate_attribute(User, :age)
+        th= translate_attribute(User, :interests)
+        th= t('common.delete') if can?(:destroy, User)
     tbody
-      - users.each do |user|
+      - @users.each do |user|
         tr
           td= user.email
+          td= user.gender
+          td= user.age
+          td= user.pretty_interests
+          td= user.destroy_icon

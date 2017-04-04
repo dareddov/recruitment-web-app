@@ -21,3 +21,23 @@
 
 en:
   hello: "Hello world"
+
+  common:
+    confirmation: Are you sure?
+    and_more: "%{text} and more..."
+    delete: Delete
+
+  users:
+    destroy:
+      success: User %{email} was successfully destroyed.
+    index:
+      title: Users
+
+  activerecord:
+    models:
+      user:
+        attributes:
+          email: E-mail
+          gender: Gender
+          age: Age
+          interests: Interests

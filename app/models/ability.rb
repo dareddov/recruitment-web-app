@@ -5,7 +5,8 @@ class Ability
      user ||= User.new
 
       if user.is_admin?
-        can :manage, :all
+        can :manage, User
+        cannot :destroy, User, id: user.id
       end
   end
 end

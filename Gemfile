@@ -40,6 +40,9 @@ gem 'slim', '~> 3.0.7'
 gem 'decent_exposure', '~> 3.0.2'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'cancan', '~> 1.6.10'
+gem 'font-awesome-rails', '~> 4.7.0.1'
+gem 'draper', '3.0.0.pre1'
+gem 'decent_decoration', '~> 0.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
