@@ -4,10 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :interests
-
   enum role: { user: 0, admin: 1 }
   enum gender: %i(male female)
+
+  has_many :interests
+  accepts_nested_attributes_for :interests, allow_destroy: true
+
+  validates :gender, :age, presence: true
 
   self.roles.keys.each do |role|
     define_method "is_#{role}?" do
