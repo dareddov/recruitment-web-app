@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   require 'csv'
 
   def index
-    @users = User.all.decorate
+    @q = User.all.ransack(params[:q])
+    @users = @q.result.decorate
   end
 
   def send_regards
