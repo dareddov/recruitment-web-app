@@ -1,0 +1,10 @@
+.container
+  h2 Users
+  table.table
+    thead
+      tr
+        th E-mail
+    tbody
+      - users.each do |user|
+        tr
+          td= user.email
