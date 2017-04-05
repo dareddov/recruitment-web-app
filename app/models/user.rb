@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   validates :gender, :age, presence: true
 
-  scope :young_women, -> { where('age between ? and ? and gender = ?', 20, 30, 1) }
+  scope :young_women, -> { where('age between ? and ? and gender = ?', 20, 30, User.genders[:female]) }
 
   self.roles.keys.each do |role|
     define_method "is_#{role}?" do
