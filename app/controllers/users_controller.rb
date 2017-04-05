@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def send_regards
-    service = RegardsSender.call(params, current_user)
+    service = RegardsSender.call(params[:id], current_user)
 
     if service
       redirect_to :users, notice: t('.success')
