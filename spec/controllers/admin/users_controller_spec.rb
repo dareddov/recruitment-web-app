@@ -34,4 +34,11 @@ describe Admin::UsersController do
       it { expect(User.last.valid_password?('secret')).to be_truthy }
     end
   end
+
+  describe '#update' do
+    let(:attributes) { { user: { email: 'jsmith@example.com' } } }
+    let(:call_request) { post :update, params: { id: user.id, user: attributes } }
+
+    it_behaves_like 'an action updating object'
+  end
 end

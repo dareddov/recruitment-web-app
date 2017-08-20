@@ -35,10 +35,6 @@ describe ApplicationHelper do
     context 'no flashes' do
       it { expect(subject).to be_nil }
     end
-
-    context 'one flash' do
-      ## TODO: I don't know how mock flash
-    end
   end
 
   describe '#translate_attribute' do

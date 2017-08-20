@@ -20,14 +20,17 @@ describe UsersController do
 
   describe '#send_regards' do
     let(:attributes) { { id: user.id } }
-    let(:call_request) { get :send_regards, params: { id: user.id }, template: false }
+    let(:call_request) { get :send_regards, params: { id: user.id } }
 
     before do
-      allow(RegardsSender).to receive(:call).with(user.id.to_s, current_user)
+      allow(RegardsSend).to receive(:call)
       call_request
     end
 
-    it { expect(RegardsSender).to have_received(:call).with(user.id.to_s, current_user).once }
+    it do
+      expect(RegardsSend).to have_received(:call)
+      expect(response).to redirect_to(users_path)
+    end
   end
 
   describe '#export' do
