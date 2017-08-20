@@ -7,25 +7,25 @@ describe ApplicationHelper do
     context 'flash is success' do
       let(:flash_type) { :success }
 
-      it { expect(subject).to eq 'alert-success'}
+      it { expect(subject).to eq 'alert-success' }
     end
 
     context 'flash is error' do
       let(:flash_type) { :error }
 
-      it { expect(subject).to eq 'alert-danger'}
+      it { expect(subject).to eq 'alert-danger' }
     end
 
     context 'flash is alert' do
       let(:flash_type) { :alert }
 
-      it { expect(subject).to eq 'alert-warning'}
+      it { expect(subject).to eq 'alert-warning' }
     end
 
     context 'flash is notice' do
       let(:flash_type) { :notice }
 
-      it { expect(subject).to eq 'alert-info'}
+      it { expect(subject).to eq 'alert-info' }
     end
   end
 

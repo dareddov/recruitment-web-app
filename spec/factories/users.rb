@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :user do
-    sequence(:email) { |n| "user#{n}@example.com"}
+    sequence(:email) { |n| "user#{n}@example.com" }
     sequence(:password) { 'Secret99' }
     gender { [:male, :female].sample }
     age { rand(100) }
