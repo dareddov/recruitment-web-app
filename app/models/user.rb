@@ -5,14 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   enum role: { user: 0, admin: 1 }
-  enum gender: %i(male female)
+  enum gender: %i[male female]
 
   has_many :interests
   accepts_nested_attributes_for :interests, allow_destroy: true
 
   validates :gender, :age, presence: true
 
-  scope :young_women, -> { where('age between ? and ? and gender = ?', 20, 30, 1) }
+  scope :young_women, -> { where('age between ? and ? and gender = ?', 20, 30, User.genders[:female]) }
 
   self.roles.keys.each do |role|
     define_method "is_#{role}?" do

@@ -35,6 +35,11 @@ class Admin::UsersController < Admin::BaseController
   private
 
   def user_params
-    params.require(:user).permit(:email, :age, :gender, interests_attributes: [:id, :name, :interest_type, :_destroy])
+    params.require(:user).permit(
+      :email,
+      :age,
+      :gender,
+      interests_attributes: %i[id name interest_type _destroy]
+    )
   end
 end

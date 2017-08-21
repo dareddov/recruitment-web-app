@@ -37,11 +37,14 @@ en:
   users:
     index:
       title: Users
-      export: Export users
+      export: Export to CSV
     destroy:
       success: User %{email} was successfully destroyed.
-    send_regards:
+
+  regards_send:
+    create:
       success: Email to user was sucessfully sent.
+      failure: Someting went wrong. Please try again.
 
   admin:
     users:
