@@ -23,21 +23,47 @@ en:
   hello: "Hello world"
 
   common:
-    confirmation: Are you sure?
+    access_denied: Access denied.
+    add: Add
+    admin_panel: Admin panel
     and_more: "%{text} and more..."
+    confirmation: Are you sure?
     delete: Delete
+    edit: Edit
+    logout: Logout
+    and_more: "%{text} and more..."
+    submit: Submit
 
   users:
-    destroy:
-      success: User %{email} was successfully destroyed.
     index:
       title: Users
+    destroy:
+      success: User %{email} was successfully destroyed.
+
+  admin:
+    users:
+      index:
+        title: Users
+        amount_points: 'Amount of points of interests: %{points}'
+      create:
+        success: User %{email} was successfully created.
+      new:
+        title: Add user
+      update:
+        success: User %{email} was successfully updated.
+      edit:
+        title: Edit user %{email}
+      form:
+        interests: Interests
+        add_interest: Add interest
 
   activerecord:
     models:
       user:
+        one: User
+        other: Users
         attributes:
-          email: E-mail
-          gender: Gender
           age: Age
+          gender: Gender
+          email: E-mail
           interests: Interests

@@ -1,5 +1,7 @@
 .container
-  h2= t('.title')
+  .row
+    h2= t('.title')
+    h4= t('.amount_points', points: Interest.specific_scope.count)
   table.table
     thead
       tr
@@ -7,8 +9,7 @@
         th= translate_attribute(User, :gender)
         th= translate_attribute(User, :age)
         th= translate_attribute(User, :interests)
-        th= t('common.delete') if can?(:destroy, User)
-
+        th= t('common.edit')
     tbody
       - @users.each do |user|
         tr
@@ -16,4 +17,7 @@
           td= user.gender
           td= user.age
           td= user.pretty_interests
-          td= user.destroy_icon
+          td= link_to t('common.edit'), [:edit, :admin, user]
+  .row
+    .col-md-2
+      = link_to t('common.add'), [:new, :admin, :user], class: 'btn btn-primary'

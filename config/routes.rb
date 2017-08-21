@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   root to: 'users#index'
 
   resources :users, only: %i(index destroy)
+
+  namespace :admin do
+    resources :users, except: %i(show destroy)
+  end
 end
