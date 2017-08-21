@@ -10,6 +10,6 @@ module UsersHelper
     [user.email,
      user.gender.to_s,
      user.age,
-     user.pretty_interests({all?: true, for_csv: true})]
+     user.decorate.pretty_interests({all?: true, for_csv: true})]
   end
 end

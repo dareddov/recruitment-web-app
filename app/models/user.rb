@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   enum role: { user: 0, admin: 1 }
-  enum gender: %i(male female)
+  enum gender: %i[male female]
 
   has_many :interests
   accepts_nested_attributes_for :interests, allow_destroy: true
