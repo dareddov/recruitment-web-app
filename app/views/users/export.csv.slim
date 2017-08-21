@@ -1,0 +1,3 @@
+= CSV.generate_line(user_csv_headers)
+- @users.each do |user|
+  = CSV.generate_line(user_csv_row(user))
