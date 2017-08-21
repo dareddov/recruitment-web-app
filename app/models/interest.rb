@@ -5,5 +5,6 @@ class Interest < ApplicationRecord
 
   validates :name, :interest_type, presence: true
 
-  scope :specific_scope, -> { where(interest_type: :health, user_id: User.young_women.select(:id)).where('name like ?', 'cosm%') }
+  scope :health_interests, ->  { where(interest_type: Interest.interest_types[:health]) }
+  scope :specific_scope, -> { health_interests.where(user_id: User.young_women.select(:id)).where('name like ?', 'cosm%') }
 end

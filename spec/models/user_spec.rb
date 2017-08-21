@@ -11,7 +11,7 @@ describe User do
   end
 
   describe '#is_admin?' do
-    let(:subject) { user.is_admin? }
+    subject { user.is_admin? }
 
     context 'user is a admin' do
       let(:user) { build(:user, :with_admin_role) }
@@ -27,7 +27,7 @@ describe User do
   end
 
   describe '#is_user?' do
-    let(:subject) { user.is_user? }
+    subject { user.is_user? }
 
     context 'user have user role' do
       let(:user) { build(:user, :with_user_role) }

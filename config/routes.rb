@@ -3,13 +3,11 @@ Rails.application.routes.draw do
 
   root to: 'users#index'
 
-  resources :users, only: %i(index destroy) do
-    get :export, on: :collection
-    get :send_regards, on: :member
-  end
+  resources :users, only: %i[index destroy]
+  resources :regards_send, only: %i[create]
 
   namespace :admin do
-    resources :users, except: %i(show destroy)
+    resources :users, except: %i[show destroy]
   end
 
   if Rails.env.development?
