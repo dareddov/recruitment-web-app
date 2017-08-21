@@ -2,7 +2,16 @@ class UsersController < ApplicationController
   require 'csv'
 
   def index
-    @users = User.all.decorate
+    @q = User.all.ransack(params[:q])
+    @users = @q.result.decorate
+  end
+
+  def send_regards
+    service = RegardsSender.call(params, current_user)
+
+    if service
+      redirect_to :users, notice: t('.success')
+    end
   end
 
   def export

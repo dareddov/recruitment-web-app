@@ -2,6 +2,12 @@
   h2= t('.title')
   - if can?(:export, User)
     = link_to t('.export'), [:export, :users, format: 'csv']
+  .row
+    = search_form_for @q, builder: SimpleForm::FormBuilder do |f|
+      .col-md-4
+        = f.input :email_cont, as: :string, label: translate_attribute(User, :email)
+        = f.button :submit, t('common.submit')
+
   table.table
     thead
       tr
@@ -9,6 +15,7 @@
         th= translate_attribute(User, :gender)
         th= translate_attribute(User, :age)
         th= translate_attribute(User, :interests)
+        th=
         th= t('common.delete') if can?(:destroy, User)
 
     tbody
@@ -18,4 +25,6 @@
           td= user.gender
           td= user.age
           td= user.pretty_interests
+          td= link_to [:send_regards, user] do
+            = fa_icon('envelope')
           td= user.destroy_icon
