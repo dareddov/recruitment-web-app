@@ -10,8 +10,12 @@ class UserDecorator < Draper::Decorator
     end
   end
 
-  def pretty_interests(scope = 8)
+  def pretty_interests(options = { })
+    options = { scope: 8, all?: false, for_csv: false }.merge(options)
     interests = object.interests.pluck(:name)
-    interests.count <= scope ? interests.join(', ') : t('common.and_more', text: interests.first(scope).join(', '))
+    return '' if interests.blank?
+    return interests.join(' ') if options[:all?] && options[:for_csv]
+    return interests.join(', ') if (interests.count <= options[:scope]) || options[:all?]
+    return t('common.and_more', text: interests.first(options[:scope]).join(', '))
   end
 end
